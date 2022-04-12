@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.alamin.daggerretrofitcoroutine_mvvm.model.repository.ProductRepository
 import javax.inject.Inject
 
-class ViewModelFactory @Inject constructor(private val repository: ProductRepository): ViewModelProvider.Factory {
+class ViewModelFactory @Inject constructor(private val map: Map<Class<*>, @JvmSuppressWildcards ViewModel>): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return ProductViewModel(repository) as T
+        return map[modelClass] as T
     }
 }

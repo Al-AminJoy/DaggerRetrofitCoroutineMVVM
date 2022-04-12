@@ -8,7 +8,7 @@ import com.alamin.daggerretrofitcoroutine_mvvm.model.repository.ProductRepositor
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class ProductViewModel @Inject constructor(private val repository: ProductRepository): ViewModel() {
+class ProductViewModel2 @Inject constructor(private val repository: ProductRepository): ViewModel() {
 
     val products : LiveData<List<Product>>
     get() = repository.products;

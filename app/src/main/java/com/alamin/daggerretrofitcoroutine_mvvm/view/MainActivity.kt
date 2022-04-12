@@ -9,7 +9,6 @@ import com.alamin.daggerretrofitcoroutine_mvvm.ProjectApplication
 import com.alamin.daggerretrofitcoroutine_mvvm.R
 import com.alamin.daggerretrofitcoroutine_mvvm.view_model.ProductViewModel
 import com.alamin.daggerretrofitcoroutine_mvvm.view_model.ViewModelFactory
-import java.lang.reflect.Array.get
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -24,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-        (application as ProjectApplication).applicationComponent.inject(this)
+        val component = (application as ProjectApplication).applicationComponent;
+        component.inject(this)
+        val map = component.getMap();
         productViewModel = ViewModelProvider(this,viewModelFactory).get(ProductViewModel::class.java)
 
         productViewModel.products.observe(this, Observer {
