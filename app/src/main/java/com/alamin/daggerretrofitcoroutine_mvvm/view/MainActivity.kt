@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     val products: TextView
         get() = findViewById(R.id.txtProducts);
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
